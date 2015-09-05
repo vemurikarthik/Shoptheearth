@@ -7,6 +7,13 @@
 meteor-platform
 autopublish
 insecure
-dburles:google-maps
+twbs:bootstrap
+iron:router
+ian:accounts-ui-bootstrap-3
+accounts-password
+accounts-twitter
+accounts-facebook
+fortawesome:fontawesome
 mdg:geolocation
-lepozepo:cloudinary
+piyush:nearby
+dburles:google-maps

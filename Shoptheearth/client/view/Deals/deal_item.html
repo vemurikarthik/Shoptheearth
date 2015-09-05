@@ -1,0 +1,55 @@
+<template name="postItem">
+  
+   
+   <div class="post container">
+    <div class="post-content">
+    <div class="col-md-12">
+     <div class="row well lead">
+
+
+<div class="col-sm-4">
+	<img src="{{image}}" height="200" width="400"><img>
+</div>
+      <div class="col-sm-7 col-sm-offset-1">
+       <a href="{{pathFor 'dealPage'}}"><h3>{{title}}</h3></a>
+       <br>
+       <h5>Description: {{description}}</h5>  
+       <h5>Actual Price : {{actual_price}} /-</h5>
+       <h5>Offer Price : {{offer_price}} /-</h5>
+            <a target='_blank' class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=Share%20the%20deal%20 http://localhost:3000{{pathFor 'dealPage'}}"
+  data-size="large" id="twitter-wjs">
+<span class="fa-stack fa-lg">
+  <i class="fa fa-circle-thin fa-stack-2x"></i>
+  <i class="fa fa-twitter fa-stack-1x"></i>
+</span></a>
+<span class="fa-stack fa-lg">
+  <i class="fa fa-circle-thin fa-stack-2x"></i>
+  <i class="fa fa-facebook fa-stack-1x"></i>
+</span>
+</div>
+
+
+     </div>
+     </div>
+      
+    </div>
+  </div>
+
+  <script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));</script>
+</template>

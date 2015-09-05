@@ -1,13 +1,9 @@
-Deals = new Mongo.Collection("Deals");
-
-if (Meteor.isClient) {
-
-  var MAP_ZOOM = 25;
+var MAP_ZOOM = 15;
     Meteor.startup(function() {  
       GoogleMaps.load();
     });
 
-  Template.address.helpers({  
+Template.DealSubmit.helpers({  
     geolocationError: function() {
       var error = Geolocation.error();
       return error && error.message;
@@ -24,14 +20,13 @@ if (Meteor.isClient) {
     }
 });  
   
-Template.address.onCreated(function() {  
+Template.DealSubmit.onCreated(function() {  
   var self = this;
   GoogleMaps.ready('address', function(map) {
     var marker;
 
     // Create and move the marker when latLng changes.
     self.autorun(function() {
-      console.log();
       var latLng = Geolocation.latLng();
       if (! latLng)
         return;
@@ -55,7 +50,7 @@ Template.address.onCreated(function() {
   });
 });
 
-  Template.address.events({
+  Template.DealSubmit.events({
      'change #deal_image_upload' : function(){
 
         if (typeof (FileReader) != "undefined") {
@@ -72,34 +67,5 @@ Template.address.onCreated(function() {
         } else {
             alert("This browser does not support FileReader.");
         }
-     },
-     'submit form':function(event){
-        event.preventDefault();
-        var title = event.target.title.value;
-        var desc  = event.target.desc.value;
-        var actual  = event.target.actual.value;
-        var offer  = event.target.offer.value;
-        var lat  = Geolocation.latLng().lat
-        var lng  = Geolocation.latLng().lng;
-        var image = document.getElementById('deal_image').getAttribute('src');
-        Deals.insert({
-          user_id:"1",
-          title:title,
-          description:desc,
-          actual_price:actual,
-          offer_price:offer,
-          latitude:lat,
-          longitude:lng,
-          image:image
-        });
-     },
-     'click #deal_image' : function(){
-        var obj = Deals.find({"_id":"BcbicMe3aqDfM35Ae"},{fields:{"image":1,"_id":0}});
-
      }
-  });
-}
-
-if (Meteor.isServer) {
-  
-}
+});

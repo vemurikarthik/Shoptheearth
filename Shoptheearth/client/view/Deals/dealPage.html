@@ -1,0 +1,44 @@
+
+<template name="dealPage">
+  
+   <div class="post container">
+    <div class="post-content">
+    <div class="col-md-12">
+
+     <div class="row well lead">
+       <div class="col-sm-4">
+        <img src="{{image}}" height="200" width="320"><img>
+      </div>
+      <h3>{{title}}</h3>
+      <br>
+       <h5>Description :{{description}}</h5>  
+       <h5>Actual Price :{{actual_price}}</h5>
+       <h5>Offer Price:{{offer_price}}</h5>
+      <a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=Share%20the%20deal%20 https://127.0.0.1/{{pathFor 'dealPage'}}"
+  data-size="large" id="twitter-wjs">
+<span class="fa-stack fa-lg">
+  <i class="fa fa-circle-thin fa-stack-2x"></i>
+  <i class="fa fa-twitter fa-stack-1x"></i>
+</span></a>
+<span class="fa-stack fa-lg">
+  <i class="fa fa-circle-thin fa-stack-2x"></i>
+  <i class="fa fa-facebook fa-stack-1x"></i>
+</span>
+       
+
+      
+    </div>
+  </div>
+     </div>
+  </div>
+
+
+<div class="container">
+  {{>map}}
+
+</div>
+
+
+
+</template>
