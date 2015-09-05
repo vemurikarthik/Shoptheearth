@@ -1,21 +1,27 @@
 <template name="layout">
-<body>
-  <div class="container">
-    <header class="navbar">
-      <div class="navbar-inner">
-        <a class="brand" href="/"><h1>Shop The Earth</h1></a>
-      </div>
-    </header>
-    <div id="main" class="row-fluid">
-      {{> yield}}
-    
+ <div class="row" id="navigation">
+  <header>
   
-
+  
+   <div class='heading'>
+   <div class="container">
+<div class="navbar navbar-fixed-top">
+ 
+  <a href='/' class='navbar-brand'>ShopTheEarth</a>
+    <ul class='nav navbar-nav navbar-right '>
+    {{#if currentUser}} <li><a href="{{pathFor 'DealSubmit'}}">Create Event</a></li>{{/if}}
+        <li><a href='/'>Home</a></li>
+        <li><a href='{{pathFor 'postsList'}}'>Events</a></li>
+        <li>{{> loginButtons}}</li>
+    </ul>
     </div>
-  </div>
-</body>
+    </div>
+    </div >
 
-  
+  </header>  
+ </div>
+
+  {{>yield}}
   
   
 </template>
