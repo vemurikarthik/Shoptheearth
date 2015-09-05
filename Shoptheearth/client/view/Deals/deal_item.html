@@ -1,7 +1,22 @@
 <template name="postItem">
-  <div class="post">
+  
+   
+   <div class="post container">
     <div class="post-content">
-      <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+    <div class="col-md-12">
+     <div class="row well">
+       <a href="{{pathFor 'dealPage'}}"><h3>{{title}}</h3></a>
+       <h4>{{outlet}}</h4>
+       <h5>{{Description}}</h5>  
+       <h5>{{actual}}</h5>
+       <h5>{{offer}}</h5>
+       <a class="twitter-share-button"
+  href="https://twitter.com/intent/tweet?text=Hello%20world"
+  data-size="large">
+Tweet</a>
+     </div>
+     </div>
+      
     </div>
   </div>
 </template>

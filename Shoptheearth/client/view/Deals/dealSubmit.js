@@ -5,18 +5,15 @@ Template.DealSubmit.events(
         'submit form': function(e) {
         e.preventDefault();
         var post = {
-        title: $(e.target).find('[name=tilte]').val(),
-        organiser: $(e.target).find('[name=organiser]').val(), 
-        location: $(e.target).find('[name=meetup]').val(),
-        time: $(e.target).find('[name=time]').val(),
-        details: $(e.target).find('[name=details]').val(),
-            price: $(e.target).find('[name=price]').val(),
-            color:$(e.target).find('[name=color]').val()
-            
-                              }
+        title: $(e.target).find('[name=title]').val(),
+        outlet: $(e.target).find('[name=outlet]').val(), 
+        Description: $(e.target).find('[name=desc]').val(),
+        actual: $(e.target).find('[name=actual]').val(),
+        offer: $(e.target).find('[name=offer]').val(),
+     }
             
         post._id = Posts.insert(post);
-        Router.go('postPage', post);
+        Router.go('dealPage', post);
   }
      
 });
