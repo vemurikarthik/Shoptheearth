@@ -10,6 +10,11 @@ Template.DealSubmit.events(
         Description: $(e.target).find('[name=desc]').val(),
         actual: $(e.target).find('[name=actual]').val(),
         offer: $(e.target).find('[name=offer]').val(),
+        lat: $(e.target).find('[name=lat]').val(),
+        log: $(e.target).find('[name=log]').val(),
+        id:Meteor.userId()
+
+
      }
             
         post._id = Posts.insert(post);
