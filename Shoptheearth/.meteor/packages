@@ -14,3 +14,6 @@ accounts-password
 accounts-twitter
 accounts-facebook
 fortawesome:fontawesome
+mdg:geolocation
+piyush:nearby
+dburles:google-maps

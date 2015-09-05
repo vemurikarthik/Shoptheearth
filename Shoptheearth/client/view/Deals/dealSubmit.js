@@ -12,7 +12,7 @@ Template.DealSubmit.events(
         offer: $(e.target).find('[name=offer]').val(),
         lat: $(e.target).find('[name=lat]').val(),
         log: $(e.target).find('[name=log]').val(),
-        id:Meteor.userId()
+        userId:Meteor.userId()
 
 
      }
