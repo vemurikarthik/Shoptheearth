@@ -1,0 +1,40 @@
+<template name='DealSubmit'>
+ <div class='merchant-deal'>
+  <form>
+  	<div class='form-group merchant-image'>
+  		<img src='default_image.jpg' width="70%" height="70%">
+  	</div>
+  	<div class="form-group">
+    	<input type="text" class="form-control" id="title" placeholder="Title of the deal" maxlength="30" name='title'>
+  	</div>
+      <div class="form-group">
+      <input type="text" class="form-control" id="outlet" placeholder="Outlet Name" maxlength="10" name='outlet'>
+    </div>
+  	<div class="form-group">
+    	<textarea class="form-control" id="desc" placeholder="Description of the deal" name='desc'></textarea>
+  	</div>
+  	<div class="form-group">
+    	<input type="text" class="form-control" id="title" placeholder="Actual Price" name='actual' maxlength="10">
+  	</div>
+  	<div class="form-group">
+    	<input type="text" class="form-control" id="title" placeholder="Offer Price" name='offer' maxlength="10">
+  	</div>
+
+     <br>
+     <br>
+  	<div class="address">
+      Enter Location coordinates:
+      <div class="form-group">
+      <input type="text" class="form-control" id="lat" placeholder="Latitude" name='lat' maxlength="10">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="log" placeholder="Longitude" name='log' maxlength="10">
+    </div>
+  		
+  	</div>
+  <br>
+ 
+  	<button type="submit" class="btn btn-default signin">Submit Deal</button>
+  </form>
+ </div>
+</template>
