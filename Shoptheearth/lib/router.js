@@ -8,7 +8,7 @@ Router.map(function() {
 
 
 
-	
+	this.route('home', {path: '/'});
 	this.route('postsList', {path: '/postlist'});
 	this.route('DealSubmit', {path: '/dealSubmit'});
 	   this.route('dealPage', {

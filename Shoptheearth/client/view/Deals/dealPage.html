@@ -5,16 +5,20 @@
    <div class="post container">
     <div class="post-content">
     <div class="col-md-12">
-     <div class="row well">
-      <h3>Product:{{title}}</h3>
+     <div class="row well lead">
+      <h3>{{title}}</h3>
+      <br>
        <h4>Outlet :{{outlet}}</h4>
        <h5>Description :{{Description}}</h5>  
        <h5>Actual Price :{{actual}}</h5>
        <h5>Offer Price:{{offer}}</h5>
       <a class="twitter-share-button"
-  href="https://twitter.com/intent/tweet?text=Hello%20world"
-  data-size="large">
-Tweet</a>
+  href="https://twitter.com/intent/tweet?text=Share%20the%20deal%20 https://127.0.0.1/{{pathFor 'dealPage'}}"
+  data-size="large" id="twitter-wjs">
+<span class="fa-stack fa-lg">
+  <i class="fa fa-circle-thin fa-stack-2x"></i>
+  <i class="fa fa-twitter fa-stack-1x"></i>
+</span></a>
        
 
       
@@ -22,4 +26,24 @@ Tweet</a>
   </div>
      </div>
   </div>
+
+
+
+
+  <script>window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  fjs.parentNode.insertBefore(js, fjs);
+ 
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+ 
+  return t;
+}(document, "script", "twitter-wjs"));</script>
 </template>
