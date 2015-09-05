@@ -1,4 +1,4 @@
-var MAP_ZOOM = 15;
+var MAP_ZOOM = 12;
 
 Meteor.startup(function() {  
   GoogleMaps.load();

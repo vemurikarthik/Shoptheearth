@@ -11,7 +11,7 @@ Template.DealSubmit.events(
         actual: $(e.target).find('[name=actual]').val(),
         offer: $(e.target).find('[name=offer]').val(),
         lat: $(e.target).find('[name=lat]').val(),
-        log: $(e.target).find('[name=log]').val(),
+        lng: $(e.target).find('[name=log]').val(),
         userId:Meteor.userId()
 
 
