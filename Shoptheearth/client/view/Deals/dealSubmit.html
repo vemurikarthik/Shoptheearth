@@ -1,40 +1,32 @@
 <template name='DealSubmit'>
  <div class='merchant-deal'>
   <form>
-  	<div class='form-group merchant-image'>
-  		<img src='default_image.jpg' width="70%" height="70%">
-  	</div>
-  	<div class="form-group">
-    	<input type="text" class="form-control" id="title" placeholder="Title of the deal" maxlength="30" name='title'>
-  	</div>
-      <div class="form-group">
-      <input type="text" class="form-control" id="outlet" placeholder="Outlet Name" maxlength="10" name='outlet'>
-    </div>
-  	<div class="form-group">
-    	<textarea class="form-control" id="desc" placeholder="Description of the deal" name='desc'></textarea>
-  	</div>
-  	<div class="form-group">
-    	<input type="text" class="form-control" id="title" placeholder="Actual Price" name='actual' maxlength="10">
-  	</div>
-  	<div class="form-group">
-    	<input type="text" class="form-control" id="title" placeholder="Offer Price" name='offer' maxlength="10">
-  	</div>
-
-     <br>
-     <br>
-  	<div class="address">
-      Enter Location coordinates:
-      <div class="form-group">
-      <input type="text" class="form-control" id="lat" placeholder="Latitude" name='lat' maxlength="10">
+    <div class='form-group merchant-image'>
+      <img id='deal_image' name='deal_image' src='default_image.jpg' width="70%" height="70%">
+      <p></p>
+      <input type='file' class="btn btn-default" id='deal_image_upload'>
     </div>
     <div class="form-group">
-      <input type="text" class="form-control" id="log" placeholder="Longitude" name='log' maxlength="10">
+      <input type="text" class="form-control" id="title" name="title" placeholder="Title of the deal" maxlength="30">
     </div>
-  		
-  	</div>
-  <br>
- 
-  	<button type="submit" class="btn btn-default signin">Submit Deal</button>
+    <div class="form-group">
+      <textarea class="form-control" id="desc" name='desc' placeholder="Description of the deal"></textarea>
+    </div>
+    <div class="form-group">
+      <input type="number" class="form-control" id="actual" name='actual' placeholder="Actual Price" maxlength="10">
+    </div>
+    <div class="form-group">
+      <input type="number" class="form-control" id="offer" name='offer' placeholder="Offer Price" maxlength="10">
+    </div>
+    <div class="address" id='address' name='address'>
+      {{#unless geolocationError}}
+          {{> googleMap name="address" options=mapOptions}}
+      {{else}}
+          Geolocation failed: {{geolocationError}}
+      {{/unless}}
+    </div>
+    <p></p>
+    <input type="submit" value="Submit Deal" id="signin" class="btn btn-default signin">
   </form>
  </div>
 </template>
