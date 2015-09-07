@@ -1,9 +1,9 @@
-var MAP_ZOOM = 15;
+var MAP_ZOOM = 10;
     Meteor.startup(function() {  
       GoogleMaps.load();
     });
 
-Template.DealSubmit.helpers({  
+Template.map.helpers({  
     geolocationError: function() {
       var error = Geolocation.error();
       return error && error.message;
@@ -20,21 +20,25 @@ Template.DealSubmit.helpers({
     }
 });  
   
-Template.DealSubmit.onCreated(function() {  
+Template.map.onCreated(function() {  
   var self = this;
   GoogleMaps.ready('address', function(map) {
-    var marker;
+    var marker,marker_2;
 
     // Create and move the marker when latLng changes.
     self.autorun(function() {
       var latLng = Geolocation.latLng();
+      var id = Router.current().params._id;
       if (! latLng)
         return;
-
       // If the marker doesn't yet exist, create it.
       if (! marker) {
         marker = new google.maps.Marker({
           position: new google.maps.LatLng(latLng.lat, latLng.lng),
+          map: map.instance
+        });
+        marker_2 = new google.maps.Marker({
+          position: new google.maps.LatLng(Posts.findOne({'_id':id}).latitude,Posts.findOne({'_id':id}).longitude),
           map: map.instance
         });
       }

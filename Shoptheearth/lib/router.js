@@ -12,6 +12,7 @@ Router.map(function() {
 	this.route('postsList', {path: '/postlist'});
 	this.route('myPostsList', {path: '/mypostlist'});
 	this.route('DealSubmit', {path: '/dealSubmit'});
+	this.route('locateAll', {path: '/locateall'});
 	   this.route('dealPage', {path: '/posts/:_id',data: function() { 
     		return Posts.findOne(this.params._id); }
    });

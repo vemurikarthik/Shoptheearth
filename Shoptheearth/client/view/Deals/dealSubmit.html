@@ -2,9 +2,12 @@
  <div class='merchant-deal'>
   <form>
     <div class='form-group merchant-image'>
-      <img id='deal_image' name='deal_image' src='default_image.jpg' width="70%" height="70%">
+      <img id='deal_image' name='deal_image' src='default_image.jpg' width="100%" height="100%">
       <p></p>
       <input type='file' class="btn btn-default" id='deal_image_upload'>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="outlet" name="outlet" placeholder="Name of the outlet" maxlength="30">
     </div>
     <div class="form-group">
       <input type="text" class="form-control" id="title" name="title" placeholder="Title of the deal" maxlength="30">
@@ -18,12 +21,11 @@
     <div class="form-group">
       <input type="number" class="form-control" id="offer" name='offer' placeholder="Offer Price" maxlength="10">
     </div>
-    <div class="address" id='address' name='address'>
-      {{#unless geolocationError}}
-          {{> googleMap name="address" options=mapOptions}}
-      {{else}}
-          Geolocation failed: {{geolocationError}}
-      {{/unless}}
+    <div class="form-group">
+      <input type="text" class="form-control" id="lat" name='lat' placeholder="Latitude" maxlength="10">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="lng" name='lng' placeholder="Longitude" maxlength="10">
     </div>
     <p></p>
     <input type="submit" value="Submit Deal" id="signin" class="btn btn-default signin">

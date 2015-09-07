@@ -13,6 +13,7 @@
       <div class="col-sm-7 col-sm-offset-1">
        <a href="{{pathFor 'dealPage'}}"><h3>{{title}}</h3></a>
        <br>
+       <h5>Outlet: {{outlet}}</h5>  
        <h5>Description: {{description}}</h5>  
        <h5>Actual Price : {{actual_price}} /-</h5>
        <h5>Offer Price : {{offer_price}} /-</h5>
@@ -28,7 +29,6 @@
   <i class="fa fa-facebook fa-stack-1x"></i>
 </span>
 </div>
-<button id="but">Get Distance</button>
 
 
      </div>
@@ -37,20 +37,4 @@
     </div>
   </div>
 
-  <script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
- 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
- 
-  return t;
-}(document, "script", "twitter-wjs"));</script>
 </template>
